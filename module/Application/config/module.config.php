@@ -31,13 +31,29 @@ return array(
                 ),
             ),
             'insert' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'type' => 'Segment',
                 'options' => array(
-                    'route'    => '/insert',
+                    'route'    => '/insert[/:id]',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Index',
                         'action'     => 'insert',
                     ),
+                    'constraints' => array(
+                          'id' => '[0-9]+',
+                      ),
+                  ),
+              ),
+              'delete' => array(
+                  'type' => 'Segment',
+                  'options' => array(
+                      'route'    => '/delete/:id',
+                      'defaults' => array(
+                          'controller' => 'Application\Controller\Index',
+                          'action'     => 'delete',
+                      ),
+                      'constraints' => array(
+                          'id' => '[0-9]+',
+                      ),
                 ),
             ),
             // The following is a route to simplify getting started creating

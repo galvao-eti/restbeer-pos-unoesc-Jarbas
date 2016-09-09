@@ -1,5 +1,9 @@
-<a href="/create">Adicionar cerveja</a>
+<a href="/insert">Adicionar cerveja</a>
 <br>
+<ul>
 <?php foreach ($beers as $beer): ?>
-    <?php echo $beer->name;?> <br>
+	<li>
+		<a href="/insert/<?php echo $beer->id; ?>"><?php echo $beer->name; ?></a> / <a href="/delete/<?php echo $beer->id; ?>">Delete <?php echo $beer->name; ?></a>
+	</li>
 <?php endforeach;?>
+</ul>

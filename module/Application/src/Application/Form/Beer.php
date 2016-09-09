@@ -12,6 +12,12 @@ class Beer extends Form
         parent::__construct();
 
         $this->add([
+            'name' => 'id',
+            'attributes' => [
+                'type' => 'hidden',
+            ],
+        ]);
+        $this->add([
             'name' => 'name',
             'options' => [
                 'label' => 'Beer name',
@@ -42,7 +48,7 @@ class Beer extends Form
             ],
         ]);
 
-        $this->setAttribute('action', '/save');
+        $this->setAttribute('action', '/insert');
         $this->setAttribute('method', 'post');
     }
 
